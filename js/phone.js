@@ -44,16 +44,38 @@ const phoneDetails = id => {
 const showPhoneDetails = phone =>{
   const detailsShow = document.getElementById('phone-details');
   detailsShow.textContent = '';
+
+
+  console.log(phone);
+
   const div = document.createElement('div');
   div.innerHTML = `
-    <div class="card mb-3" style="max-width: 540px;">
+    <div class="card mb-3" style="max-width: 740px;">
       <div class="row g-0">
-            <div class="col-md-4">
+            <div class="col-md-4 d-flex align-items-center">
               <img src="${phone.image}" class="img-fluid rounded-start p-3" alt="...">
             </div>
             <div class="col-md-8">
               <div class="card-body">
-                <h5 class="card-title">${phone.releaseDate}</h5>
+                <h4 class="card-title">${phone.releaseDate}</h4>
+                <h6 class="card-title">
+                Main Features :
+                <span > Chip Set: ${phone.mainFeatures.chipSet} </span>
+                <span > Display : ${phone.mainFeatures.displaySize} </span>
+                <span > Memory  : ${phone.mainFeatures.memory} </span>
+                <span> Storage : ${phone.mainFeatures.storage} </span>
+                </h6>
+                <br>
+                <h6 class="card-title">
+                Others Information:
+                <span> Bluetooth : ${phone.others.Bluetooth} </span>
+                <span> GPS : ${phone.others.GPS} </span>
+                <span> NFC  : ${phone.others.NFC} </span>
+                <span> Radio : ${phone.others.Radio} </span>
+                <span> USB : ${phone.others.USB} </span>
+                <span> WLAN : ${phone.others.WLAN} </span>
+                </h6>
+                
               </div>
             </div>
       </div>
