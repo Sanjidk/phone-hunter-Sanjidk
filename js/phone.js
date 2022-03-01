@@ -69,7 +69,7 @@ const showPhoneDetails = phone =>{
   div.innerHTML = `
     <div class="card mb-3" style="max-width: 640px;">
       <div class="row g-0">
-            <div class="col-md-4 d-flex p-3 align-items-center flex-column text-center">
+            <div class="col-md-4 d-flex p-3 align-items-center flex-column text-center edit-image">
               <img src="${phone.image}" alt="...">
               <h2 class="card-title  details-name">${phone.name}</h2>
             </div>
