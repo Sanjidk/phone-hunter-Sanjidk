@@ -17,37 +17,31 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=PT+Serif:wght@700&display=swap" rel="stylesheet">
 
-
 </head>
 <body class="bg-dark">
   <header>
+
+    <!-- Header Text , Image and Search Bar -->
     <div class="head-div d-flex justify-content-center">
       <img src="img/iPhone.png" alt="">
       <div>
         <h1 class="text-header fw-bold my-3">Alpha Smartphones Zone</h1>
         
-    <!-- Search Bar -->
-    <div class="input-group mb-5">
-      <input id="input-phone" type="text" class="form-control" placeholder="Search for a Mobile Phone...">
-      <button onclick="searchPhone()"  class="btn btn-outline-secondary bg-primary fw-bold text-white" type="button">Click Here</button>
-    </div>
-
+        <!-- Search Bar -->
+        <div class="input-group mb-5">
+          <input id="input-phone" type="text" class="form-control" placeholder="Search for a Mobile Phone...">
+          <button onclick="searchPhone()"  class="btn btn-outline-secondary bg-primary fw-bold text-white" type="button">Click Here</button>
+        </div>
       </div>
-
     </div>
-    
-    
+
+    <!-- Error Massage Handle  -->
+    <div id="error"> </div>
   </header>
 
 
   <!-- show all by using Grid Card -->
-  <main class="container">
-
-    <!-- if input value is Nothing but click for search  -->
-    <div id="empty-error"> </div>
-
-    <!-- if input value is wrong but click for search  -->
-    <div id="input-error"> </div>
+  <main id="main" class="container">
 
     <!-- Show Details  -->
     <section id="phone-details" class="mb-3 g-4 d-flex justify-content-center">
