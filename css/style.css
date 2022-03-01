@@ -2,3 +2,42 @@ span{
   display: block;
   font-size: small;
 }
+
+
+.background-color{
+  background-color: rgb(3, 0, 43);
+  color: white;
+}
+
+.details-name{
+  color: rgb(252, 0, 0);
+  font-weight: 700;
+  animation: text 3s linear infinite;
+
+
+
+}
+
+.edit-image img{
+  animation: photo 5s linear infinite;
+}
+@keyframes photo {
+  from{
+    transform: rotateY(180deg);
+  }
+  to{
+    transform: rotateY(-180deg);
+  }
+}
+
+@keyframes text {
+  0%{
+    transform: scale(1.1);
+  }
+  50%{
+    transform: scale(0.3);
+  }
+  100%{
+    transform: scale(1.1);
+  }
+}

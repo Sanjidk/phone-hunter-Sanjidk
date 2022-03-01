@@ -52,10 +52,12 @@ const showPhoneDetails = phone =>{
   div.innerHTML = `
     <div class="card mb-3" style="max-width: 740px;">
       <div class="row g-0">
-            <div class="col-md-4 d-flex align-items-center">
-              <img src="${phone.image}" class="img-fluid rounded-start p-3" alt="...">
+            <div class="col-md-4 d-flex p-3 align-items-center flex-column text-center edit-image">
+              <img src="${phone.image}" alt="...">
+              <h2 class="card-title  details-name">${phone.name}</h2>
+
             </div>
-            <div class="col-md-8">
+            <div class="col-md-8 background-color">
               <div class="card-body">
                 <h4 class="card-title">${phone.releaseDate}</h4>
                 <h6 class="card-title">
