@@ -1,21 +1,38 @@
+
+
 const searchPhone = () =>{
   const searchBox = document.getElementById('input-phone');
   const inputPhoneValue = searchBox.value;
+  searchBox.value = '';
 
+  
+if (inputPhoneValue == ''){
+  const errorSms = document.getElementById('empty-error');
+  errorSms.innerHTML = `  <h3 class=" text-white text-center "> Please, Write something to Display </h3> `;
+}
+else{
+  document.getElementById('empty-error').style.display = 'none';
   const url = `https://openapi.programming-hero.com/api/phones?search=${inputPhoneValue}`
   fetch(url)
   .then(res => res.json())
   .then(data => displayPhone(data.data) );
-  searchBox.value = '';
+  
+}
 }
 
-const displayPhone = allPhones => {
 
+const displayPhone = allPhones => {
   // show 20 items for search 
   const phones = allPhones.slice(0,20);
-  // console.log(phones);
   const phoneDisplay = document.getElementById('display-phone');
   phoneDisplay.textContent = '';
+
+
+if (allPhones.length == 0){
+  const errorSms = document.getElementById('input-error');
+  errorSms.innerHTML = `  <h3 class=" text-white text-center "> No Result Found </h3> `;
+}
+else{
   phones.forEach( phone =>{
     const div = document.createElement('div');
     div.innerHTML = `
@@ -31,7 +48,11 @@ const displayPhone = allPhones => {
     </div>
     `
     phoneDisplay.appendChild(div);
+    
   });
+}
+  const empty = showPhoneDetails()
+  empty.textContent = ''; 
 }
 
 const phoneDetails = id => {
@@ -39,15 +60,12 @@ const phoneDetails = id => {
   fetch(url)
   .then(res => res.json())
   .then(phone => showPhoneDetails(phone.data));
-
 }
+
 const showPhoneDetails = phone =>{
   const detailsShow = document.getElementById('phone-details');
   detailsShow.textContent = '';
-
-
-  console.log(phone);
-
+  // console.log(phone);
   const div = document.createElement('div');
   div.innerHTML = `
     <div class="card mb-3" style="max-width: 640px;">
