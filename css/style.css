@@ -3,33 +3,36 @@ span{
   font-size: small;
 }
 
+.text-header{
+  background-image: linear-gradient(to right, rgba(255,0,0,0), rgba(255,0,0,1));
+  color: aliceblue;
+  padding: 4px;
+}
+
+
+.head-div img{
+width: 160px;
+padding: 10px;
+margin: 0;
+height: 145px;
+}
+
 
 .background-color{
   background-color: rgb(3, 0, 43);
   color: white;
 }
 
+/* Edit Text and Add Animation  */
 .details-name{
-  color: rgb(252, 0, 0);
+  text-shadow: 5px 5px #a4b1abb9;
+
+  margin-top: 15px;
+  font-family: 'PT Serif', serif;
+  color: rgb(0, 0, 0);
   font-weight: 700;
-  animation: text 3s linear infinite;
-
-
-
+  animation: text 4s linear infinite;
 }
-
-.edit-image img{
-  animation: photo 5s linear infinite;
-}
-@keyframes photo {
-  from{
-    transform: rotateY(180deg);
-  }
-  to{
-    transform: rotateY(-180deg);
-  }
-}
-
 @keyframes text {
   0%{
     transform: scale(1.1);
@@ -39,5 +42,18 @@ span{
   }
   100%{
     transform: scale(1.1);
+  }
+}
+
+/* image rotation animation  */
+.edit-image img{
+  animation: photo 8s linear infinite;
+}
+@keyframes photo {
+  from{
+    transform: rotateY(180deg);
+  }
+  to{
+    transform: rotateY(-180deg);
   }
 }
