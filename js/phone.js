@@ -8,7 +8,7 @@ const searchPhone = () =>{
   searchBox.value = '';
 
 if (inputPhoneValue == ''){
-  error.innerHTML = `  <h3 class=" text-white text-center "> Please, Write something to Display </h3> `
+  error.innerHTML = `  <h3 class=" text-white text-center "> Please, Search Something to Display. </h3> `
   main.style.display = 'none'
 }
 else{
@@ -27,7 +27,7 @@ const displayPhone = allPhones => {
   phoneDisplay.textContent = '';
 
 if (allPhones.length == 0){
-  error.innerHTML = `  <h3 class=" text-white text-center "> No Result Found </h3> `
+  error.innerHTML = `  <h3 class=" text-white text-center "> No Result Found. </h3> `
 }
 else{
   // show 20 items for search 
@@ -62,37 +62,38 @@ const phoneDetails = id => {
 }
 
 // Display all Details 
-const showPhoneDetails = phone =>{
+const showPhoneDetails = mobile =>{
   const detailsShow = document.getElementById('phone-details');
   detailsShow.textContent = '';
+
   const div = document.createElement('div');
   div.innerHTML = `
     <div class="card mb-3" style="max-width: 640px;">
       <div class="row g-0">
             <div class="col-md-4 d-flex p-3 align-items-center flex-column text-center edit-image">
-              <img src="${phone.image}" alt="...">
-              <h2 class="card-title  details-name">${phone.name}</h2>
+              <img src="${mobile.image}" alt="...">
+              <h2 class="card-title  details-name">${mobile.name}</h2>
             </div>
             <div class="col-md-8 background-color">
               <div class="card-body">
-                <h4 class="card-title">${phone.releaseDate ? phone.releaseDate: 'Release Date not Found' } </h4>
+                <h4 class="card-title">${mobile.releaseDate ? mobile.releaseDate: 'Release Date not Found' } </h4>
                 <h6 class="card-title">
                 Main Features :
-                <span > Chip Set: ${phone.mainFeatures.chipSet ? phone.mainFeatures.chipSet: 'Not Found' } </span>
-                <span > Display : ${phone.mainFeatures.displaySize ? phone.mainFeatures.displaySize: 'Not Found' } </span>
-                <span > Memory  : ${phone.mainFeatures.memory ? phone.mainFeatures.memory: 'Not Found' } </span>
-                <span> Storage : ${phone.mainFeatures.storage ? phone.mainFeatures.storage: 'Not Found' } </span>
-                <span> Sensors : ${phone.mainFeatures.sensors ? phone.mainFeatures.sensors: 'Not Found' } </span>
+                <span > Chip Set: ${mobile.mainFeatures.chipSet ? mobile.mainFeatures.chipSet: 'Not Found' } </span>
+                <span > Display : ${mobile.mainFeatures.displaySize ? mobile.mainFeatures.displaySize: 'Not Found' } </span>
+                <span > Memory  : ${mobile.mainFeatures.memory ? mobile.mainFeatures.memory: 'Not Found' } </span>
+                <span> Storage : ${mobile.mainFeatures.storage ? mobile.mainFeatures.storage: 'Not Found' } </span>
+                <span> Sensors : ${mobile.mainFeatures.sensors.join(', ')} </span>
                 </h6>
                 <br>
                 <h6 class="card-title">
                 Others Information:
-                <span> Bluetooth : ${phone.others? phone.others.Bluetooth: 'Not Found'} </span>
-                <span> GPS : ${phone.others? phone.others.GPS: 'Not Found'} </span>
-                <span> NFC  : ${phone.others? phone.others.NFC: 'Not Found'} </span>
-                <span> Radio : ${phone.others? phone.others?.Radio: 'Not Found'} </span>
-                <span> USB : ${phone.others? phone.others?.USB: 'Not Found'} </span>
-                <span> WLAN : ${phone.others? phone.others.WLAN: 'Not Found'} </span>
+                <span> Bluetooth : ${mobile.others? mobile.others.Bluetooth: 'Not Found'} </span>
+                <span> GPS : ${mobile.others? mobile.others.GPS: 'Not Found'} </span>
+                <span> NFC  : ${mobile.others? mobile.others.NFC: 'Not Found'} </span>
+                <span> Radio : ${mobile.others? mobile.others?.Radio: 'Not Found'} </span>
+                <span> USB : ${mobile.others? mobile.others?.USB: 'Not Found'} </span>
+                <span> WLAN : ${mobile.others? mobile.others.WLAN: 'Not Found'} </span>
                 </h6>
               </div>
             </div>
